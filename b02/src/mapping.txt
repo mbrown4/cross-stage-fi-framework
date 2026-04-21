@@ -1,0 +1,8 @@
+u 0 _48_
+stato 0 _49_
+stato 1 _50_
+stato 2 _51_
+stato 3 _52_
+stato 4 _53_
+stato 5 _54_
+stato 6 _55_
