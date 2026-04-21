@@ -1,0 +1,5 @@
+outp 0 _62_
+overflw 0 _63_
+stato 0 _64_
+stato 1 _65_
+stato 2 _66_

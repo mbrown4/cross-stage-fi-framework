@@ -1,0 +1,60 @@
+RTL → Gate-Level Bit-Level Mapping
+==================================
+
+RTL Registers Found:
+   outp (1 bits)
+   overflw (1 bits)
+   stato (3 bits)
+
+Gate-Level Flip-Flops Found:
+   _62_ ( sky130_fd_sc_hd__dfrtp_2 )
+   _63_ ( sky130_fd_sc_hd__dfrtp_2 )
+   _64_ ( sky130_fd_sc_hd__dfrtp_2 )
+   _65_ ( sky130_fd_sc_hd__dfrtp_2 )
+   _66_ ( sky130_fd_sc_hd__dfrtp_2 )
+
+
+outp:
+   bit[0] -> _62_
+
+overflw:
+   bit[0] -> _63_
+
+stato:
+   bit[0] -> _64_
+   bit[1] -> _65_
+   bit[2] -> _66_
+
+Detailed Flip-Flop Information
+--------------------------------
+
+outp[0] -> _62_ (sky130_fd_sc_hd__dfrtp_2)
+    .CLK(clock)
+    .D(_00_)
+    .Q(outp)
+    .RESET_B(_02_)
+
+overflw[0] -> _63_ (sky130_fd_sc_hd__dfrtp_2)
+    .CLK(clock)
+    .D(_01_)
+    .Q(overflw)
+    .RESET_B(_03_)
+
+stato[0] -> _64_ (sky130_fd_sc_hd__dfrtp_2)
+    .CLK(clock)
+    .D(_28_)
+    .Q(\stato[0])
+    .RESET_B(_04_)
+
+stato[1] -> _65_ (sky130_fd_sc_hd__dfrtp_2)
+    .CLK(clock)
+    .D(_29_)
+    .Q(\stato[1])
+    .RESET_B(_05_)
+
+stato[2] -> _66_ (sky130_fd_sc_hd__dfrtp_2)
+    .CLK(clock)
+    .D(_30_)
+    .Q(\stato[2])
+    .RESET_B(_06_)
+
