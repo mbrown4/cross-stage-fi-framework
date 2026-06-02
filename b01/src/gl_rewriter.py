@@ -3,8 +3,8 @@ import re
 from pathlib import Path
 
 MAPPING_FILE = "mapping.txt"
-NETLIST_IN   = "b02_gl.v"
-NETLIST_OUT  = "b02_gl_faulty.v"
+NETLIST_IN   = "b01_gl.v"
+NETLIST_OUT  = "b01_gl_faulty.v"
 
 # Match both dfrtp and dfstp flops
 DFF_RE = re.compile(
