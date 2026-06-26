@@ -118,6 +118,14 @@ cross-stage-fi-framework/
 
 ---
 
-## Running the Example (b02)
+## Repository Structure
 
-The framework consists of the following core components:
+The examples/b02 directory contains a fully working fault injection example.
+
+1. Generate the synthesized gate-level netlist
+
+Run the OpenLane flow from the examples/b02 directory:
+
+flow.tcl -design .
+
+This produces the synthesized gate-level netlist (b02_gl.v).
