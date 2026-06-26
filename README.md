@@ -84,11 +84,40 @@ The framework consists of the following core components:
 ## Repository Structure
 
 ```bash
-├── rtl/                # RTL designs and FI wrappers
-├── gl/                 # Gate-level netlists (synthesized)
-├── tb/                 # Testbenches (RTL + GL)
-├── scripts/            # Python tools (mapping, rewriting)
-├── mappings/           # RTL-to-GL mapping files
-├── results/            # Simulation outputs and logs
-├── docs/               # Reports, figures, and diagrams
-└── Makefile            # Build and simulation automation
+cross-stage-fi-framework/
+│
+├── examples/
+│   └── b02/ # Complete working example
+│       ├── config.json
+│       ├── pin_order.cfg
+│       └── src/
+│           ├── b02.v # Original RTL
+│           ├── b02_gl.v # OpenLane synthesized netlist
+│           ├── b02_gl_faulty.v # Fault-instrumented GL netlist
+│           ├── tb_b02_fi.v # Generated fault injection testbench
+│           ├── Makefile # RTL/GL simulation automation
+│           ├── FI_DFF.v # Fault injection flip-flops
+│           ├── mapping.txt
+│           ├── mapping_report.txt
+│           └── ...
+│
+├── tools/ # Reusable framework scripts
+│   ├── rtl_gl_mapper.py # Maps RTL registers to GL flip-flops
+│   ├── gl_rewriter.py # Rewrites GL netlists for FI
+|   ├── gen_tb_fi.py #
+|   ├── FI_DIFF #
+│   └── mapping_loader.v #
+│
+├── user_designs/ # Add your own designs here
+│   └── <your_design>/
+│       ├── config.json
+│       ├── pin_order.cfg
+│       └── src/
+│           ├── <design>.v
+│           ├── Makefile
+│           └── ...
+│
+└── README.md
+
+## Running the Example (b02)
+
