@@ -118,11 +118,7 @@ cross-stage-fi-framework/
 
 ---
 
-##
-
----
-
-## Repository Structure
+## **Repository Structure**
 
 The examples/b02 directory contains a fully working fault injection example.
 
