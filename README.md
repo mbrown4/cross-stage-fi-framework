@@ -5,10 +5,7 @@
 This repository presents a unified fault injection (FI) framework for analyzing reliability across multiple abstraction levels in digital systems, with a focus on RISC-V microarchitecture. The framework enables direct comparison between Register Transfer Level (RTL) and Gate-Level (GL) implementations to study fault propagation, masking behavior, and architectural vulnerability.
 
 The primary objective is to bridge the gap between high-level functional models and physically realized gate-level designs by systematically injecting faults into state elements and observing their impact on system outputs.
-
----
-
-## Motivation
+C
 
 Traditional reliability analysis often focuses on a single abstraction level, which can lead to inaccurate estimations of system vulnerability. However, synthesis, optimization, and physical design transformations introduce structural and timing changes that significantly affect how faults propagate.
 
@@ -119,5 +116,8 @@ cross-stage-fi-framework/
 │
 └── README.md
 
+---
+
 ## Running the Example (b02)
 
+The framework consists of the following core components:
