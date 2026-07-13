@@ -8,7 +8,7 @@ NETLIST_OUT  = "b02_gl_faulty.v"
 
 DFF_RE = re.compile(
     r'(?P<indent>^[ \t]*)'
-    r'(?P<cell>sky130_fd_sc_hd__dfrtp_\d+)\s+'
+    rf'(?P<cell>sky130_fd_sc_hd__df[rs]tp_\d+)\s+'
     r'(?P<inst>[_A-Za-z0-9\\\[\]\.]+)\s*'
     r'\((?P<ports>.*?)\)\s*;\s*',
     re.S | re.M
@@ -82,7 +82,7 @@ def rewrite_netlist(netlist_text, mapping_entries):
         # Match exactly one named instance block
         inst_re = re.compile(
             rf'(?P<indent>^[ \t]*)'
-            rf'(?P<cell>sky130_fd_sc_hd__dfrtp_\d+)\s+'
+            rf'(?P<cell>sky130_fd_sc_hd__df[rs]tp_\d+)\s+'
             rf'(?P<inst>{re.escape(inst)})\s*'
             rf'\((?P<ports>.*?)\)\s*;\s*',
             re.S | re.M
@@ -93,6 +93,7 @@ def rewrite_netlist(netlist_text, mapping_entries):
             print(f"WARNING: could not find instance {inst}")
             continue
 
+        cell = m.group("cell")
         indent = m.group("indent")
         ports  = m.group("ports")
         p = parse_ports(ports)
@@ -102,18 +103,37 @@ def rewrite_netlist(netlist_text, mapping_entries):
         q   = fix_signal(p.get("Q"))
         rb  = fix_signal(p.get("RESET_B"))
 
-        if not all([clk, d, q, rb]):
-            raise RuntimeError(f"Instance {inst} missing one of CLK/D/Q/RESET_B")
+        if "__dfrtp_" in cell:
+            rb = fix_signal(p.get("RESET_B"))
 
-        replacement = (
-            f"{indent}FI_DFF_DFRTP_FAULTY {inst} (\n"
-            f"{indent}  .CLK({clk}),\n"
-            f"{indent}  .D({d}),\n"
-            f"{indent}  .RESET_B({rb}),\n"
-            f"{indent}  .fault_en(fault_en[{idx}]),\n"
-            f"{indent}  .Q({q})\n"
-            f"{indent});\n"
-        )
+            if not all([clk, d, q, rb]):
+                raise RuntimeError(f"Instance {inst} missing CLK/D/Q/RESET_B")
+
+            replacement = (
+                f"{indent}FI_DFF_DFRTP_FAULTY {inst} (\n"
+                f"{indent}  .CLK({clk}),\n"
+                f"{indent}  .D({d}),\n"
+                f"{indent}  .RESET_B({rb}),\n"
+                f"{indent}  .fault_en(fault_en[{idx}]),\n"
+                f"{indent}  .Q({q})\n"
+                f"{indent});\n"
+            )
+
+        elif "__dfstp_" in cell:
+            sb = fix_signal(p.get("SET_B"))
+
+            if not all([clk, d, q, sb]):
+                raise RuntimeError(f"Instance {inst} missing CLK/D/Q/SET_B")
+
+            replacement = (
+                f"{indent}FI_DFF_DFSTP_FAULTY {inst} (\n"
+                f"{indent}  .CLK({clk}),\n"
+                f"{indent}  .D({d}),\n"
+                f"{indent}  .SET_B({sb}),\n"
+                f"{indent}  .fault_en(fault_en[{idx}]),\n"
+                f"{indent}  .Q({q})\n"
+                f"{indent});\n"
+            )
 
         new_text = new_text[:m.start()] + replacement + new_text[m.end():]
         replacements += 1
