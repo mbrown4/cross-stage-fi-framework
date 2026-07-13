@@ -287,7 +287,7 @@ else:
 
 tb += f"""
   localparam integer INJECT_CYCLE = 30;
-  localparam [{final_fault_width-1}:0] INJECT_MASK = FI_STATO_0;
+  localparam [{final_fault_width-1}:0] INJECT_MASK = `INJECT_MASK;
 
 """
 
