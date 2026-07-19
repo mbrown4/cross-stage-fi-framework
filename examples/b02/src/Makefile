@@ -47,15 +47,15 @@ check_pdk:
 ###########################################################
 # RTL
 ###########################################################
-fORCE:
+FORCE:
 
-rtl: $(RTL_VVP) FORCE $(RTL_SRC) $(TB)
+rtl: $(RTL_VVP) 
 	vvp $(RTL_VVP)
 
-$(RTL_VVP): $(RTL_SRC) $(TB)
+$(RTL_VVP): FORCE $(RTL_SRC) $(TB)
 	iverilog -g2012 -Wall \
 		-DRTL \
-		-DINJECT_MASK=$(INJECT_MASK) \
+		-DFI_MASK=$(INJECT_MASK) \
 		-s $(TB_TOP) \
 		-o $(RTL_VVP) \
 		$(RTL_SRC) \
@@ -71,9 +71,9 @@ gl: check_pdk $(GL_VVP)
 $(GL_VVP): FORCE $(FI_DFF) $(GL_NET) $(TB)
 	iverilog -g2012 -Wall \
 		-DGL \
-		-DINJECT_MASK=$(INJECT_MASK) \
+		-DFI_MASK=$(INJECT_MASK) \
 		-s $(TB_TOP) \
-		-o $(RTL_VVP) \
+		-o $(GL_VVP) \
 		$(FI_DFF) \
 		$(SKY130_PRIMS) \
 		$(SKY130_LIB) \
