@@ -238,7 +238,7 @@ my_design_gl.v
 Run:
 
 ```bash
-python3 ../../tools/rtl_gl_mapper.py
+python3 rtl_gl_mapper.py my_design.v my_design_gl.v mapping.txt
 ```
 
 This creates:
@@ -255,7 +255,7 @@ mapping_report.txt
 Run:
 
 ```bash
-python3 ../../tools/gl_rewriter.py
+python3 gl_rewriter.py
 ```
 
 This produces:
