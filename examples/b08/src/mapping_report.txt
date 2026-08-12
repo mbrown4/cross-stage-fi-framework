@@ -1,0 +1,173 @@
+RTL → Gate-Level Bit-Level Mapping
+==================================
+
+RTL storage bits: 22
+Gate-level flip-flops: 22
+GL-only synthesized bits: 1
+
+RTL Registers Found:
+   O (4 bits)
+   IN_R (8 bits)
+   OUT_R (4 bits)
+   MAR (3 bits)
+   STATO (3 bits)
+
+Fault-enable Mapping:
+   fault_en[0] -> _222_ -> STATO[0] (RTL)
+   fault_en[1] -> _224_ -> STATO[2] (RTL)
+   fault_en[2] -> _225_ -> STATO[3] (GL_ONLY)
+   fault_en[3] -> _226_ -> MAR[0] (RTL)
+   fault_en[4] -> _227_ -> MAR[1] (RTL)
+   fault_en[5] -> _228_ -> MAR[2] (RTL)
+   fault_en[6] -> _229_ -> O[0] (RTL)
+   fault_en[7] -> _230_ -> O[1] (RTL)
+   fault_en[8] -> _231_ -> O[2] (RTL)
+   fault_en[9] -> _232_ -> O[3] (RTL)
+   fault_en[10] -> _233_ -> IN_R[0] (RTL)
+   fault_en[11] -> _234_ -> IN_R[1] (RTL)
+   fault_en[12] -> _235_ -> IN_R[2] (RTL)
+   fault_en[13] -> _236_ -> IN_R[3] (RTL)
+   fault_en[14] -> _237_ -> IN_R[4] (RTL)
+   fault_en[15] -> _238_ -> IN_R[5] (RTL)
+   fault_en[16] -> _239_ -> IN_R[6] (RTL)
+   fault_en[17] -> _240_ -> IN_R[7] (RTL)
+   fault_en[18] -> _241_ -> OUT_R[0] (RTL)
+   fault_en[19] -> _242_ -> OUT_R[1] (RTL)
+   fault_en[20] -> _243_ -> OUT_R[2] (RTL)
+   fault_en[21] -> _244_ -> OUT_R[3] (RTL)
+
+Detailed Flip-Flop Information
+--------------------------------
+
+fault_en[0] STATO[0] -> _222_ (sky130_fd_sc_hd__dfstp_2, RTL)
+    .CLK(CLOCK)
+    .D(_001_)
+    .Q(\STATO[0])
+    .SET_B(_004_)
+
+fault_en[1] STATO[2] -> _224_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_000_)
+    .Q(\STATO[2])
+    .RESET_B(_006_)
+
+fault_en[2] STATO[3] -> _225_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(CLOCK)
+    .D(_003_)
+    .Q(\STATO[3])
+    .RESET_B(_007_)
+
+fault_en[3] MAR[0] -> _226_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_027_)
+    .Q(\MAR[0])
+    .RESET_B(_008_)
+
+fault_en[4] MAR[1] -> _227_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_028_)
+    .Q(\MAR[1])
+    .RESET_B(_009_)
+
+fault_en[5] MAR[2] -> _228_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_029_)
+    .Q(\MAR[2])
+    .RESET_B(_010_)
+
+fault_en[6] O[0] -> _229_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_030_)
+    .Q(O[0])
+    .RESET_B(_011_)
+
+fault_en[7] O[1] -> _230_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_031_)
+    .Q(O[1])
+    .RESET_B(_012_)
+
+fault_en[8] O[2] -> _231_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_032_)
+    .Q(O[2])
+    .RESET_B(_013_)
+
+fault_en[9] O[3] -> _232_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_033_)
+    .Q(O[3])
+    .RESET_B(_014_)
+
+fault_en[10] IN_R[0] -> _233_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_034_)
+    .Q(\IN_R[0])
+    .RESET_B(_015_)
+
+fault_en[11] IN_R[1] -> _234_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_035_)
+    .Q(\IN_R[1])
+    .RESET_B(_016_)
+
+fault_en[12] IN_R[2] -> _235_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_036_)
+    .Q(\IN_R[2])
+    .RESET_B(_017_)
+
+fault_en[13] IN_R[3] -> _236_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_037_)
+    .Q(\IN_R[3])
+    .RESET_B(_018_)
+
+fault_en[14] IN_R[4] -> _237_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_038_)
+    .Q(\IN_R[4])
+    .RESET_B(_019_)
+
+fault_en[15] IN_R[5] -> _238_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_039_)
+    .Q(\IN_R[5])
+    .RESET_B(_020_)
+
+fault_en[16] IN_R[6] -> _239_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_040_)
+    .Q(\IN_R[6])
+    .RESET_B(_021_)
+
+fault_en[17] IN_R[7] -> _240_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_041_)
+    .Q(\IN_R[7])
+    .RESET_B(_022_)
+
+fault_en[18] OUT_R[0] -> _241_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_042_)
+    .Q(\OUT_R[0])
+    .RESET_B(_023_)
+
+fault_en[19] OUT_R[1] -> _242_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_043_)
+    .Q(\OUT_R[1])
+    .RESET_B(_024_)
+
+fault_en[20] OUT_R[2] -> _243_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_044_)
+    .Q(\OUT_R[2])
+    .RESET_B(_025_)
+
+fault_en[21] OUT_R[3] -> _244_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(CLOCK)
+    .D(_045_)
+    .Q(\OUT_R[3])
+    .RESET_B(_026_)
+

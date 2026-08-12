@@ -1,0 +1,23 @@
+# index logical_name bit instance cell origin
+0 STATO 0 _222_ sky130_fd_sc_hd__dfstp_2 RTL
+1 STATO 2 _224_ sky130_fd_sc_hd__dfrtp_2 RTL
+2 STATO 3 _225_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+3 MAR 0 _226_ sky130_fd_sc_hd__dfrtp_2 RTL
+4 MAR 1 _227_ sky130_fd_sc_hd__dfrtp_2 RTL
+5 MAR 2 _228_ sky130_fd_sc_hd__dfrtp_2 RTL
+6 O 0 _229_ sky130_fd_sc_hd__dfrtp_2 RTL
+7 O 1 _230_ sky130_fd_sc_hd__dfrtp_2 RTL
+8 O 2 _231_ sky130_fd_sc_hd__dfrtp_2 RTL
+9 O 3 _232_ sky130_fd_sc_hd__dfrtp_2 RTL
+10 IN_R 0 _233_ sky130_fd_sc_hd__dfrtp_2 RTL
+11 IN_R 1 _234_ sky130_fd_sc_hd__dfrtp_2 RTL
+12 IN_R 2 _235_ sky130_fd_sc_hd__dfrtp_2 RTL
+13 IN_R 3 _236_ sky130_fd_sc_hd__dfrtp_2 RTL
+14 IN_R 4 _237_ sky130_fd_sc_hd__dfrtp_2 RTL
+15 IN_R 5 _238_ sky130_fd_sc_hd__dfrtp_2 RTL
+16 IN_R 6 _239_ sky130_fd_sc_hd__dfrtp_2 RTL
+17 IN_R 7 _240_ sky130_fd_sc_hd__dfrtp_2 RTL
+18 OUT_R 0 _241_ sky130_fd_sc_hd__dfrtp_2 RTL
+19 OUT_R 1 _242_ sky130_fd_sc_hd__dfrtp_2 RTL
+20 OUT_R 2 _243_ sky130_fd_sc_hd__dfrtp_2 RTL
+21 OUT_R 3 _244_ sky130_fd_sc_hd__dfrtp_2 RTL
