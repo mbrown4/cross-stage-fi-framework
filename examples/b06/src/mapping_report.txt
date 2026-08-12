@@ -1,0 +1,103 @@
+RTL → Gate-Level Bit-Level Mapping
+==================================
+
+RTL storage bits: 9
+Gate-level flip-flops: 12
+GL-only synthesized bits: 6
+
+RTL Registers Found:
+   cc_mux (2 bits)
+   uscite (2 bits)
+   enable_count (1 bits)
+   ackout (1 bits)
+   state (3 bits)
+
+Fault-enable Mapping:
+   fault_en[0] -> _77_ -> state[0] (RTL)
+   fault_en[1] -> _78_ -> state[1] (RTL)
+   fault_en[2] -> _79_ -> state[2] (RTL)
+   fault_en[3] -> _80_ -> state[3] (GL_ONLY)
+   fault_en[4] -> _81_ -> state[4] (GL_ONLY)
+   fault_en[5] -> _82_ -> state[5] (GL_ONLY)
+   fault_en[6] -> _83_ -> uscite[1] (RTL)
+   fault_en[7] -> _84_ -> uscite[2] (GL_ONLY)
+   fault_en[8] -> _85_ -> cc_mux[1] (RTL)
+   fault_en[9] -> _86_ -> cc_mux[2] (GL_ONLY)
+   fault_en[10] -> _87_ -> ackout[0] (RTL)
+   fault_en[11] -> _88_ -> state[6] (GL_ONLY)
+
+Detailed Flip-Flop Information
+--------------------------------
+
+fault_en[0] state[0] -> _77_ (sky130_fd_sc_hd__dfstp_2, RTL)
+    .CLK(clock)
+    .D(_38_)
+    .Q(\state[0])
+    .SET_B(_05_)
+
+fault_en[1] state[1] -> _78_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(clock)
+    .D(_01_)
+    .Q(\state[1])
+    .RESET_B(_06_)
+
+fault_en[2] state[2] -> _79_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(clock)
+    .D(_02_)
+    .Q(\state[2])
+    .RESET_B(_07_)
+
+fault_en[3] state[3] -> _80_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_37_)
+    .Q(\state[3])
+    .RESET_B(_08_)
+
+fault_en[4] state[4] -> _81_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_04_)
+    .Q(\state[4])
+    .RESET_B(_09_)
+
+fault_en[5] state[5] -> _82_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_03_)
+    .Q(\state[5])
+    .RESET_B(_10_)
+
+fault_en[6] uscite[1] -> _83_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(clock)
+    .D(_17_)
+    .Q(uscite[1])
+    .RESET_B(_11_)
+
+fault_en[7] uscite[2] -> _84_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_18_)
+    .Q(uscite[2])
+    .RESET_B(_12_)
+
+fault_en[8] cc_mux[1] -> _85_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(clock)
+    .D(_19_)
+    .Q(cc_mux[1])
+    .RESET_B(_13_)
+
+fault_en[9] cc_mux[2] -> _86_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_20_)
+    .Q(cc_mux[2])
+    .RESET_B(_14_)
+
+fault_en[10] ackout[0] -> _87_ (sky130_fd_sc_hd__dfrtp_2, RTL)
+    .CLK(clock)
+    .D(_00_)
+    .Q(ackout)
+    .RESET_B(_15_)
+
+fault_en[11] state[6] -> _88_ (sky130_fd_sc_hd__dfrtp_2, GL_ONLY)
+    .CLK(clock)
+    .D(_21_)
+    .Q(\state[6])
+    .RESET_B(_16_)
+

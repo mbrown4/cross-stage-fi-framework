@@ -1,0 +1,13 @@
+# index logical_name bit instance cell origin
+0 state 0 _77_ sky130_fd_sc_hd__dfstp_2 RTL
+1 state 1 _78_ sky130_fd_sc_hd__dfrtp_2 RTL
+2 state 2 _79_ sky130_fd_sc_hd__dfrtp_2 RTL
+3 state 3 _80_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+4 state 4 _81_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+5 state 5 _82_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+6 uscite 1 _83_ sky130_fd_sc_hd__dfrtp_2 RTL
+7 uscite 2 _84_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+8 cc_mux 1 _85_ sky130_fd_sc_hd__dfrtp_2 RTL
+9 cc_mux 2 _86_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
+10 ackout 0 _87_ sky130_fd_sc_hd__dfrtp_2 RTL
+11 state 6 _88_ sky130_fd_sc_hd__dfrtp_2 GL_ONLY
